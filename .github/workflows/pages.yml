@@ -2,7 +2,7 @@ name: Deploy birthday website to GitHub Pages
 
 on:
   push:
-    branches: [khalanesekantsi1-source-happy-birthday-website]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
