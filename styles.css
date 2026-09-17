@@ -24,11 +24,11 @@ body {
   min-height: 100vh;
   font-family: "Fredoka", sans-serif;
   background:
-    linear-gradient(rgba(25, 16, 34, 0.78), rgba(47, 27, 48, 0.84)),
+    linear-gradient(rgba(255, 236, 245, 0.84), rgba(255, 245, 214, 0.88)),
     url("birthday-background.jfif") center / cover fixed no-repeat;
   color: var(--text);
   overflow-x: hidden;
-  animation: background-colors 5s ease-in-out infinite alternate;
+  animation: background-colors 20s ease-in-out infinite;
 }
 
 .cross-pattern {
@@ -42,7 +42,7 @@ body {
   background-position: 0 0;
   mix-blend-mode: multiply;
   pointer-events: none;
-  animation: pattern-drift 18s linear infinite;
+  animation: pattern-and-theme 20s linear infinite;
 }
 
 button {
@@ -84,8 +84,7 @@ h1 {
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  color: rgba(61, 43, 77, 0.86);
 }
 
 .birthday-photo {
@@ -434,11 +433,6 @@ h1 {
   padding: 10px 14px;
 }
 
-.cake-message h2 {
-  color: #fff7fb;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
-}
-
 .wish-form {
   display: grid;
   gap: 10px;
@@ -588,31 +582,40 @@ h1 {
 }
 
 @keyframes background-colors {
-  0% {
+  0%, 24% {
     background:
-      linear-gradient(rgba(25, 16, 34, 0.78), rgba(47, 27, 48, 0.84)),
+      linear-gradient(rgba(255, 236, 245, 0.84), rgba(255, 245, 214, 0.88)),
       url("birthday-background.jfif") center / cover fixed no-repeat;
   }
-  33% {
+  25%, 75% {
     background:
-      linear-gradient(rgba(14, 25, 47, 0.8), rgba(35, 24, 58, 0.86)),
-      url("birthday-background.jfif") center / cover fixed no-repeat;
+      url("background-theme.jpeg") center / cover fixed no-repeat;
   }
-  66% {
+  76% {
     background:
-      linear-gradient(rgba(18, 18, 23, 0.8), rgba(35, 35, 42, 0.88)),
-      url("birthday-theme.jpeg") center / cover fixed no-repeat;
+      linear-gradient(rgba(229, 239, 255, 0.84), rgba(244, 231, 255, 0.88)),
+      url("birthday-background.jfif") center / cover fixed no-repeat;
   }
   100% {
     background:
-      linear-gradient(rgba(13, 39, 35, 0.8), rgba(55, 34, 25, 0.86)),
+      linear-gradient(rgba(232, 255, 244, 0.84), rgba(255, 239, 222, 0.88)),
       url("birthday-background.jfif") center / cover fixed no-repeat;
   }
 }
 
-@keyframes pattern-drift {
-  from { background-position: 0 0; }
-  to { background-position: 150px 150px; }
+@keyframes pattern-and-theme {
+  0%, 24% {
+    opacity: 0.13;
+    background-position: 0 0;
+  }
+  25%, 75% {
+    opacity: 0;
+    background-position: 75px 75px;
+  }
+  76%, 100% {
+    opacity: 0.13;
+    background-position: 150px 150px;
+  }
 }
 
 @keyframes flicker {
