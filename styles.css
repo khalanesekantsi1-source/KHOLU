@@ -30,12 +30,28 @@ body {
   overflow-x: hidden;
 }
 
+.floating-cross {
+  position: fixed;
+  z-index: 0;
+  top: 17%;
+  right: 4%;
+  width: clamp(100px, 15vw, 190px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  animation: cross-float 7s ease-in-out infinite;
+}
+
 button {
   font: inherit;
 }
 
 .page-wrap {
   position: relative;
+  z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
   padding: 48px 20px 80px;
@@ -563,6 +579,11 @@ h1 {
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(-4deg); }
   50% { transform: translateY(-18px) rotate(4deg); }
+}
+
+@keyframes cross-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
 }
 
 @keyframes flicker {
