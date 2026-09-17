@@ -28,21 +28,21 @@ body {
     url("birthday-background.jfif") center / cover fixed no-repeat;
   color: var(--text);
   overflow-x: hidden;
+  animation: background-colors 5s ease-in-out infinite alternate;
 }
 
-.floating-cross {
+.cross-pattern {
   position: fixed;
   z-index: 0;
-  top: 17%;
-  right: 4%;
-  width: clamp(100px, 15vw, 190px);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  opacity: 0.12;
+  inset: 0;
+  opacity: 0.13;
+  background-image: url("birthday-cross.jpeg");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  background-position: 0 0;
   mix-blend-mode: multiply;
   pointer-events: none;
-  animation: cross-float 7s ease-in-out infinite;
+  animation: pattern-drift 18s linear infinite;
 }
 
 button {
@@ -581,9 +581,32 @@ h1 {
   50% { transform: translateY(-18px) rotate(4deg); }
 }
 
-@keyframes cross-float {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-14px) rotate(3deg); }
+@keyframes background-colors {
+  0% {
+    background:
+      linear-gradient(rgba(255, 236, 245, 0.84), rgba(255, 245, 214, 0.88)),
+      url("birthday-background.jfif") center / cover fixed no-repeat;
+  }
+  33% {
+    background:
+      linear-gradient(rgba(229, 239, 255, 0.84), rgba(244, 231, 255, 0.88)),
+      url("birthday-background.jfif") center / cover fixed no-repeat;
+  }
+  66% {
+    background:
+      linear-gradient(rgba(247, 247, 247, 0.86), rgba(235, 235, 235, 0.9)),
+      url("birthday-theme.jpeg") center / cover fixed no-repeat;
+  }
+  100% {
+    background:
+      linear-gradient(rgba(232, 255, 244, 0.84), rgba(255, 239, 222, 0.88)),
+      url("birthday-background.jfif") center / cover fixed no-repeat;
+  }
+}
+
+@keyframes pattern-drift {
+  from { background-position: 0 0; }
+  to { background-position: 150px 150px; }
 }
 
 @keyframes flicker {
