@@ -4,57 +4,6 @@ const surpriseCard = document.getElementById('surpriseCard');
 const revealItems = document.querySelectorAll('.reveal');
 const confettiCanvas = document.getElementById('confettiCanvas');
 const ctx = confettiCanvas.getContext('2d');
-const birthdayMusic = document.getElementById('birthdayMusic');
-const birthdayVideo = document.getElementById('birthdayVideo');
-
-birthdayMusic.volume = 0.08;
-const musicTracks = ['birthday-music.mp3', 'birthday-music-2.mp3'];
-let currentTrack = 0;
-let musicWasStarted = false;
-
-function loadNextTrack() {
-  currentTrack = (currentTrack + 1) % musicTracks.length;
-  birthdayMusic.src = musicTracks[currentTrack];
-  birthdayMusic.load();
-  if (musicWasStarted) {
-    birthdayMusic.play().catch(() => {});
-  }
-}
-
-function startBackgroundMusic() {
-  if (musicWasStarted || !birthdayVideo.paused) return;
-  if (!birthdayMusic.src || !birthdayMusic.src.endsWith(musicTracks[currentTrack])) {
-    birthdayMusic.src = musicTracks[currentTrack];
-  }
-  birthdayMusic.play().then(() => {
-    musicWasStarted = true;
-  }).catch(() => {
-    // Some browsers require a visitor interaction before allowing audio.
-  });
-}
-
-startBackgroundMusic();
-birthdayMusic.addEventListener('ended', loadNextTrack);
-['click', 'keydown', 'touchstart'].forEach((eventName) => {
-  document.addEventListener(eventName, startBackgroundMusic, { once: true, passive: true });
-});
-
-birthdayVideo.addEventListener('play', () => {
-  birthdayMusic.pause();
-});
-
-birthdayVideo.addEventListener('pause', () => {
-  if (birthdayVideo.currentTime < birthdayVideo.duration) {
-    resumeMusicIfEnabled();
-  }
-});
-
-birthdayVideo.addEventListener('ended', resumeMusicIfEnabled);
-
-function resumeMusicIfEnabled() {
-  if (!musicWasStarted) return;
-  birthdayMusic.play().catch(() => {});
-}
 const wishForm = document.getElementById('wishForm');
 const wishInput = document.getElementById('wishInput');
 const wishStatus = document.getElementById('wishStatus');
