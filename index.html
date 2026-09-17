@@ -28,12 +28,18 @@
         <section class="memory-video card" aria-label="Birthday memory video">
           <p class="small-tag">Special birthday memory</p>
           <img class="memory-image" src="special-birthday-memory.jfif" alt="Special birthday memory" />
-          <video controls playsinline preload="metadata" poster="kholu-photo.jfif">
+          <video id="birthdayVideo" controls playsinline preload="metadata" poster="kholu-photo.jfif">
             <source src="birthday-memory.mp4" type="video/mp4" />
             Your browser does not support embedded videos.
           </video>
         </section>
       </header>
+
+      <div class="music-control" aria-hidden="true">
+        <audio id="birthdayMusic" loop preload="auto" autoplay>
+          <source src="birthday-music.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
 
       <main class="content">
         <section class="card message-card reveal" id="surpriseCard">
