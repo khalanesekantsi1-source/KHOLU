@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Kholu Moshoeshoe!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="balloon balloon-one">🎈</div>
+      <div class="balloon balloon-two">🎈</div>
+      <div class="balloon balloon-three">🎈</div>
+      <div class="balloon balloon-four">🎈</div>
+
+      <header class="hero">
+        <p class="eyebrow">A little celebration just for you</p>
+        <h1>Happy Birthday<br />Kholu Moshoeshoe!</h1>
+        <p class="subtitle">Cheers to 18 wonderful years of laughter, love, sweet surprises, and unforgettable memories.</p>
+        <div class="cta-row">
+          <button class="primary-button" id="surpriseButton">Open your message</button>
+          <button class="secondary-button" id="confettiButton">Celebrate!</button>
+        </div>
+        <img class="birthday-photo" src="kholu-photo.jfif" alt="A special birthday memory" />
+        <section class="memory-video card" aria-label="Birthday memory video">
+          <p class="small-tag">Special birthday memory</p>
+          <img class="memory-image" src="special-birthday-memory.jfif" alt="Special birthday memory" />
+          <video controls playsinline preload="metadata" poster="kholu-photo.jfif">
+            <source src="birthday-memory.mp4" type="video/mp4" />
+            Your browser does not support embedded videos.
+          </video>
+        </section>
+      </header>
+
+      <main class="content">
+        <section class="card message-card reveal" id="surpriseCard">
+          <span class="badge">🎉 Eighteenth birthday wishes</span>
+          <h2>What it means to turn 18</h2>
+          <blockquote>
+            “Turning 18 means stepping into a new chapter: old enough to dream boldly,
+            brave enough to choose your own path, and wise enough to know that the best
+            parts of life are still ahead.”
+          </blockquote>
+          <p>
+            Kholu, may this new chapter bring you confidence, exciting opportunities,
+            unforgettable adventures, and the courage to become everything you are meant to be.
+          </p>
+          <p>
+            Keep shining, keep smiling, and remember: you are loved, appreciated, and truly extraordinary.
+          </p>
+          <p class="signature">With love,<br /><strong>Sekantsi Khalane</strong></p>
+        </section>
+
+        <section class="grid">
+          <article class="card mini-card reveal">
+            <div class="icon">🎂</div>
+            <h3>Sweet Memories</h3>
+            <p>May every memory you make this year be joyful and full of warmth.</p>
+          </article>
+
+          <article class="card mini-card reveal">
+            <div class="icon">✨</div>
+            <h3>Big Dreams</h3>
+            <p>May your courage keep growing and your dreams keep getting bigger.</p>
+          </article>
+
+          <article class="card mini-card reveal">
+            <div class="icon">🥳</div>
+            <h3>Pure Joy</h3>
+            <p>May laughter, fun, and beautiful surprises follow you all year long.</p>
+          </article>
+        </section>
+
+        <section class="basketball-scene card reveal" aria-label="A bouncing basketball animation">
+          <p class="small-tag">Game day celebration</p>
+          <div class="scene-stage">
+            <span class="basketball" aria-label="Bouncing basketball"></span>
+            <span class="bouncing-heart" aria-label="Bouncing heart">♥</span>
+            <span class="bouncing-heart bouncing-heart-right" aria-label="Bouncing heart">♥</span>
+          </div>
+        </section>
+
+        <section class="cake-section reveal">
+          <div class="cake">
+            <div class="cake-top"></div>
+            <div class="candles">
+              <span class="candle candle-one"></span>
+              <span class="candle candle-two"></span>
+              <span class="candle candle-three"></span>
+            </div>
+            <div class="icing"></div>
+            <div class="cake-body"></div>
+          </div>
+          <div class="cake-message">
+            <p class="small-tag">Make a wish</p>
+            <h2>May this year be your best one yet.</h2>
+            <form class="wish-form" id="wishForm">
+              <label for="wishInput">Write your birthday wish</label>
+              <textarea id="wishInput" rows="3" maxlength="300" placeholder="I wish for..." required></textarea>
+              <button class="primary-button" type="submit">Send my wish</button>
+              <p class="form-status" id="wishStatus" role="status"></p>
+            </form>
+            <button class="owner-button" id="ownerButton" type="button">View wishes</button>
+            <div class="owner-panel" id="ownerPanel" hidden>
+              <form class="password-form" id="passwordForm">
+                <label for="passwordInput">Enter your password to view wishes</label>
+                <div class="password-row">
+                  <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off" placeholder="Password" required />
+                  <button class="secondary-button" type="submit">Unlock</button>
+                </div>
+                <p class="form-status" id="passwordStatus" role="alert"></p>
+              </form>
+              <div class="wishes-list" id="wishesList" hidden></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
